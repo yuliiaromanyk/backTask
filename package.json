@@ -1,0 +1,21 @@
+{
+  "name": "todos",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js"
+  },
+  "dependencies": {
+    "body-parser": "*",
+    "express": "*",
+    "mongodb": "^3.1.0",
+    "mongoose": "^5.1.7"
+  },
+  "author": "Yulia",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^1.17.5"
+  }
+}
