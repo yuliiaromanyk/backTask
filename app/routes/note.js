@@ -7,7 +7,7 @@ module.exports = function(app, db) {
 
 
   app.get('/notes', (req, res) => {
-    Notes.find((err, item) => {
+    db.collection('notes').find((err, item) => {
         if (err) return err;
         res.send(item);
     });
@@ -40,7 +40,7 @@ module.exports = function(app, db) {
 
 
   app.put('todos/:id/:done', (req, res) => {
-       Notes.findByIdAndUpdate(req.params.id, {state: true}, (err, todo) => {
+    db.collection('notes').findByIdAndUpdate(req.params.id, {state: true}, (err, todo) => {
             if (err) return err;
             res.send(todo);
         });
@@ -51,7 +51,7 @@ module.exports = function(app, db) {
 
 
   app.put('todos/:id/:undone', (req, res) => { 
-        Notes.findByIdAndUpdate(req.params.id, {done: false}, (err, todo) => {
+    db.collection('notes').findByIdAndUpdate(req.params.id, {state: false}, (err, todo) => {
             if (err) return err;
             res.send(todo);
         });
