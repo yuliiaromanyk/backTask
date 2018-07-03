@@ -1,5 +1,5 @@
 
-const db   = require('./config/database');
+const db   = require('./config/db');
 const Note = require('./config/Schema');
 
 module.exports = function(app, db) {
@@ -7,7 +7,7 @@ module.exports = function(app, db) {
 
  })
 
- 
+
   app.get('/notes', (req, res) => {
     db.collection('notes').find((err, item) => {
         if (err) return err;
