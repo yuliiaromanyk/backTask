@@ -12,7 +12,7 @@ const port = 8000;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
-MongoClient.connect("mongodb://<dbuser>:<80975109374j>@ds155699.mlab.com:55699/yuliia", (err, database) => {
+MongoClient.connect(db.url, (err, database) => {
   if (err) return console.log(err)
 
   require('./app/routes')(app, database);
