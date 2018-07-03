@@ -1,11 +1,13 @@
-const Todo = require('./Schema');
+
 const db   = require('./config/database');
+const Note = require('./config/Schema');
 
 module.exports = function(app, db) {
- 
- 
+ const note = new Note({
 
+ })
 
+ 
   app.get('/notes', (req, res) => {
     db.collection('notes').find((err, item) => {
         if (err) return err;

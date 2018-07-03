@@ -1,7 +1,5 @@
 const mongoose = require('mongoose');
-const db       = require('./config/database');
 mongoose.connect('mongodb://localhost/julia');
-
 
 const tdSchm = mongoose.Schema({
     _id: mongoose.Schema.Types.ObjectId,
@@ -11,7 +9,5 @@ const tdSchm = mongoose.Schema({
 
 
 const Notes = mongoose.model('notes', tdSchm);
-
-
 
 module.exports = Notes;
