@@ -38,8 +38,8 @@ app.post('/note', (req, res, next) => next(),
 (req, res) => {
      res.send('a new Todo')
     const item = new Note({
-        name: req.body.name,
-        done: req.body.done
+        body: req.body.body,
+        state: req.body.state
     })
     Note.create(item,
         function (error, item) {
