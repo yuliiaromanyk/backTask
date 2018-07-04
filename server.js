@@ -80,7 +80,7 @@ app.put('/todo/done/:id', (req, res, next) => next(),
 (req, res) => {
     Todo.findByIdAndUpdate(req.params.id, req.body, function (err, item) {
         if (err) return next(err);
-        item.done = true;
+        item.state = true;
         res.send(item);
       })
 }
@@ -90,7 +90,7 @@ app.put('/todo/undone/:id', (req, res, next) => next(),
 (req, res) => {
     Todo.findByIdAndUpdate(req.params.id, req.body, function (err, item) {
         if (err) return next(err);
-        item.done = false;
+        item.state = false;
         res.send(item);
       })
 }
